@@ -11,5 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //= require "jquery-1.10.2"
 //= require "jquery-ui"
-//= require "gif_controller"
 //= require "angular"
+//= require "gif_controller"

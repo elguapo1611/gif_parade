@@ -2,9 +2,9 @@
   <div id="player"></div>
 
   <div id="wrapper" class="">
-    <div id="gif" style="background-image: url({{currentSlide.url}})"></div>
+    <div id="gif" ng-cloak style="background-image: url({{currentSlide.url}})"></div>
     <div id="chyron">
-      <h1 ng-bind="currentSlideText"></h1>
+      <h1 ng-cloak ng-bind="currentSlide.text"></h1>
     </div>
     <div id="title">
       <img src="/gifparade-logo.svg" width="216">
@@ -23,6 +23,6 @@
     </div>
   </div>
 
-  <div id="belowfold">
+  <div class="belowfold" id="belowfold">
     <%= render :partial => "form" %>
   </div>

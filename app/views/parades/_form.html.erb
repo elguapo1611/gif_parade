@@ -1,14 +1,15 @@
 <h1>Slide count {{slide_length()}}</h1>
 <h1>Total duration {{total_time()}}</h1>
 <ul class="slides" id="slides">
-  <li ng-repeat="slide in slides">
+  <li ng-repeat="slide in slides" class="clearfix">
+    <div class="img-container">
+      <img src="{{slide.url}}" />
+    </div>
     <form id="editSlideForm{{$index}}" name="editSlideForm{{$index}}">
       <input ng-model="slide.text" class="text" type="text" size="30" placeholder="text">
       <input ng-model="slide.duration" class="duration" type="number" ng-min="1" size="30" placeholder="duration">
       <input ng-model="slide.url" ng-change="test_me()" class="url" type="text" size="30" placeholder="url">
     </form>
-    <img src="{{slide.url}}" />
-    
   </li>
 </ul>
 
