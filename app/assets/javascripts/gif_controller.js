@@ -1,9 +1,6 @@
 function GifCtrl($scope) {
 
   $scope.currentSlideIndex = 0;
-  $scope.currentSlideUrl = "";
-  $scope.currentSlideText = "";
-  $scope.currentSlideDuration = 1;
 
   $scope.slides = [
     {text:'learn angular', duration:1, url: "http://media3.giphy.com/media/bTFKvbG4nDT5S/200.gif", selected:true},
@@ -11,13 +8,11 @@ function GifCtrl($scope) {
   ];
 
   $scope.$watch('currentSlideIndex', function(newValue, oldValue) {
-    $scope.currentSlideObj = $scope.slides[newValue];
+    $scope.currentSlide = $scope.slides[newValue];
     $scope.slides[newValue].selected = true;
     $scope.slides[oldValue].selected = false;
-    $scope.currentSlideUrl = $scope.currentSlideObj.url;
-    $scope.currentSlideText = $scope.currentSlideObj.text;
-    $scope.currentSlideDuration = $scope.currentSlideObj.duration;
   });
+
 
   $scope.slide_length = function() {
     return $scope.slides.length;
@@ -42,19 +37,18 @@ function GifCtrl($scope) {
 
   $scope.dragStart = function(e, ui) {
     ui.item.data('start', ui.item.index());
-  }
+  };
 
   $scope.dragEnd = function(e, ui) {
     var start = ui.item.data('start'),
         end = ui.item.index();
     $scope.slides.splice(end, 0, 
     $scope.slides.splice(start, 1)[0]);
-    $scope.$apply();
-  }
+  };
 
   function to_time_code(timecode) {
     return parseInt(timecode);
-  }
+  };
 
   sortableEle = $('#slides').sortable({
     start: $scope.dragStart,

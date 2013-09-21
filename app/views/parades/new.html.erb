@@ -2,7 +2,7 @@
   <div id="player"></div>
 
   <div id="wrapper" class="">
-    <div id="gif" style="background-image: url({{currentSlideUrl}})"></div>
+    <div id="gif" style="background-image: url({{currentSlide.url}})"></div>
     <div id="chyron">
       <h1 ng-bind="currentSlideText"></h1>
     </div>
@@ -13,11 +13,8 @@
       <p id="toggle-audio" class="audio-on" data-playing="true">
         <a href="#">turn audio OFF</a>
       </p>
-      <p id="get-short-url" style="display: none;">
+      <p id="get-short-url">
         <a href="#" id="get_url">get short URL</a>
-      </p>
-      <p id="too-long-url" style="display: none;">
-        <a>too many GIFs for short URL!</a>
       </p>
       <p id="copy-short-url" style="display:none;">
         <span id="copy_this"></span>

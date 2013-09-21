@@ -5,7 +5,7 @@
     <form id="editSlideForm{{$index}}" name="editSlideForm{{$index}}">
       <input ng-model="slide.text" class="text" type="text" size="30" placeholder="text">
       <input ng-model="slide.duration" class="duration" type="number" ng-min="1" size="30" placeholder="duration">
-      <input ng-model="slide.url" class="url" type="text" size="30" placeholder="url">
+      <input ng-model="slide.url" ng-change="test_me()" class="url" type="text" size="30" placeholder="url">
     </form>
     <img src="{{slide.url}}" />
     
