@@ -1,0 +1,23 @@
+<h1>Slide count {{slide_length()}}</h1>
+<h1>Total duration {{total_time()}}</h1>
+<ul class="slides" id="slides">
+  <li ng-repeat="slide in slides">
+    <form id="editSlideForm{{$index}}" name="editSlideForm{{$index}}">
+      <input ng-model="slide.text" class="text" type="text" size="30" placeholder="text">
+      <input ng-model="slide.duration" class="duration" type="number" ng-min="1" size="30" placeholder="duration">
+      <input ng-model="slide.url" class="url" type="text" size="30" placeholder="url">
+    </form>
+    <img src="{{slide.url}}" />
+    
+  </li>
+</ul>
+
+<form name="addSlideForm" ng-submit="add_slide(addSlideForm)">
+  <input type="text" ng-model="gif_text"  size="30" placeholder="text">
+  <input value="1" ng-model="gif_duration" ng-min="1" type="number" size="30" placeholder="duration">
+  <input type="text" ng-model="gif_url"  size="30" placeholder="url">
+  <input class="btn-primary" type="submit" value="add">
+</form>
+
+<hr>
+<pre ng-bind="slides|json"></pre>

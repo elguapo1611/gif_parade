@@ -1,8 +1,23 @@
 function GifCtrl($scope) {
+
+  $scope.currentSlideIndex = 0;
+  $scope.currentSlideUrl = "";
+  $scope.currentSlideText = "";
+  $scope.currentSlideDuration = 1;
+
   $scope.slides = [
-    {text:'learn angular', duration:1, url: "someurl"},
-    {text:'build an angular app', duration:2, url: "someurl"}
+    {text:'learn angular', duration:1, url: "http://media3.giphy.com/media/bTFKvbG4nDT5S/200.gif", selected:true},
+    {text:'build an angular app', duration:2, url: "http://media.giphy.com/media/ubEPBAOWW3wA0/giphy.gif", selected:false}
   ];
+
+  $scope.$watch('currentSlideIndex', function(newValue, oldValue) {
+    $scope.currentSlideObj = $scope.slides[newValue];
+    $scope.slides[newValue].selected = true;
+    $scope.slides[oldValue].selected = false;
+    $scope.currentSlideUrl = $scope.currentSlideObj.url;
+    $scope.currentSlideText = $scope.currentSlideObj.text;
+    $scope.currentSlideDuration = $scope.currentSlideObj.duration;
+  });
 
   $scope.slide_length = function() {
     return $scope.slides.length;
@@ -28,13 +43,12 @@ function GifCtrl($scope) {
   $scope.dragStart = function(e, ui) {
     ui.item.data('start', ui.item.index());
   }
+
   $scope.dragEnd = function(e, ui) {
     var start = ui.item.data('start'),
         end = ui.item.index();
-
     $scope.slides.splice(end, 0, 
     $scope.slides.splice(start, 1)[0]);
-
     $scope.$apply();
   }
 

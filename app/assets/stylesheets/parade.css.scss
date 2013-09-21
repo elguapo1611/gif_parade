@@ -1,0 +1,130 @@
+/* -- SETUP -- */
+
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Arial;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+/* -- GENERAL -- */
+
+section         { padding: 14px; }
+h1              { font-weight: 200; font-size: 80px; line-height: 90px; }
+hr              { margin: 0 0 10px 0; }
+p               { margin: 0 0 10px 0; }
+a               { text-decoration: none; color: gold; }
+form            { margin: 0 0 18px 0; }
+
+/* -- */
+
+html,body       { width: 100%; height: 100%; }
+
+#wrapper        { position: absolute;
+                  left: 0px;
+                  background: #222;
+                  top: 0px;
+                  height: 100%;
+                  width: 100%;
+                  z-index: 2; }
+#wrapper.loading { background: #222 url(../images/spinner.v1.gif) no-repeat center center; }
+#gif            { background-color: transparent;
+                  background-position: center center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  position: absolute;
+                  height: 100%;
+                  width: 100%;
+                  z-index: 1; }
+#chyron         { position: absolute;
+                  bottom: 50%; left: 0px; right: 0px; 
+                  z-index: 3; }
+#chyron h1      { text-align: center;
+                  padding: 32px;
+                  text-shadow: 3px 3px 0px fuchsia;
+                  text-transform: uppercase;
+                  font-style: italic;
+                  font-weight: 700;
+                  color: #fff; }
+#belowfold      { position: absolute;
+                  background: #333;
+                  color: #fff;
+                  top: 100%; 
+                  width: 100%;
+                  padding: 40px; }
+#title          { position: absolute; 
+                  z-index: 10;
+                  left: 20px;
+                  bottom: 14px;
+                }
+#title em       { font-style: italic; font-size: 32px; font-weight: 700; text-transform: uppercase; display: inline-block; background: yellow; color: black; padding: 16px 12px; }
+#title strong   { font-style: italic; font-size: 32px; font-weight: 200; text-transform: uppercase; display: inline-block; background: black; color: white; padding: 16px 12px; }
+#controls {
+  position: absolute;
+  z-index: 10;
+  bottom: 14px;
+  right: 20px;
+  left: 0;
+}
+#controls p {
+  display: block;
+  float: right;
+  margin: 0 0 0 14px;
+  padding: 0;
+}
+#controls p a,
+#controls p span {
+  display: block;
+  float: left;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 48px;
+  font-weight: 700;
+  padding: 0px 15px;
+}
+
+#controls #copy-short-url           { background: transparent;  }
+#controls #copy-short-url a         { color: #000; background: rgba(0,255,255,0.48); }
+#controls #copy-short-url a.post-copy { background: rgba(255,0,255,0.48); color: #fff; }
+#controls #copy-short-url span      { color: #000; background: rgba(255,255,255,0.48); }
+
+#controls #too-long-url a           { background: yellow; color: #000; }
+
+#controls #get-short-url            { background: rgba(0,255,255,0.48); }
+#controls #get-short-url a          { color: #000; }
+
+#controls #toggle-audio.audio-on    { background: rgba(0,255,255,0.48); }
+#controls #toggle-audio.audio-on a  { color: #000; }
+#controls #toggle-audio.audio-off   { background: rgba(255,0,255,0.48); }
+#controls #toggle-audio.audio-off a { color: #fff; }
+/* New GIF PARADE form */
+
+#newParade-form ul    { }
+#newParade-form ul li { list-style: none; margin: 6px 0; }
+#newParade-form ul li label { display: inline-block; width: 92px; }
+#newParade-form ul li input { width: 300px; padding: 7px; font-size: 12px; background: #eee; border: none; border-radius: 3px; }
+#newParade-form ul li input#videoStartTime { width: 40px; }
+#newParade-form ul li input.gifDuration { width: 40px; }
+
+/* Share Box */
+
+#share_box {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -50px;
+  z-index: 10;
+}

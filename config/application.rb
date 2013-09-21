@@ -55,7 +55,12 @@ module Gif
 
     # Enable the asset pipeline
     config.assets.enabled = true
-
+    
+    config.assets.precompile << Proc.new { |path|
+      if path =~ /\.(eot|svg|ttf|woff)\z/
+        true
+      end
+    }
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
