@@ -19,7 +19,6 @@ body {
 
 /* -- GENERAL -- */
 
-section         { padding: 14px; }
 h1              { font-weight: 200; font-size: 80px; line-height: 90px; }
 hr              { margin: 0 0 10px 0; }
 p               { margin: 0 0 10px 0; }
@@ -29,7 +28,7 @@ form            { margin: 0 0 18px 0; }
 /* -- */
 
 html,body       { width: 100%; height: 100%; }
-
+.section-wrapper {min-width:100%; min-height:100%; }
 #wrapper        { position: absolute;
                   left: 0px;
                   background: #222;

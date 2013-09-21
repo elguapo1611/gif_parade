@@ -13,3 +13,4 @@
 //= require "jquery-ui"
 //= require "angular"
 //= require "gif_controller"
+//= require "youtube_controller"

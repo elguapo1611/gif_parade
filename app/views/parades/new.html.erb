@@ -1,4 +1,4 @@
-
+<section class="section-wrapper" ng-controller="GifCtrl">
   <div id="player"></div>
 
   <div id="wrapper" class="">
@@ -10,9 +10,11 @@
       <img src="/gifparade-logo.svg" width="216">
     </div>
     <div id="controls">
-      <p id="toggle-audio" class="audio-on" data-playing="true">
-        <a href="#">turn audio OFF</a>
-      </p>
+      <div ng-controller="YoutubeCtrl">
+        <p id="toggle-audio" class="audio-on" data-playing="true">
+          <a ng-click="youtube_toggle()" href="#">turn audio OFF</a>
+        </p>
+      </div>
       <p id="get-short-url">
         <a href="#" id="get_url">get short URL</a>
       </p>
@@ -26,3 +28,4 @@
   <div class="belowfold" id="belowfold">
     <%= render :partial => "form" %>
   </div>
+</section>
