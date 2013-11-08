@@ -7,7 +7,7 @@ function GifCtrl($scope, $timeout) {
   ];
 
   $scope.currentSlideIndex = 0;
-  $scope.currentSlide = $scope.slides[0];
+  $scope.currentSlide = $scope.slides[$scope.currentSlideIndex];
   $scope.previousSlide = $scope.slides[2];
 
   $scope.$watch('currentSlideIndex', function(newValue, oldValue) {
@@ -45,8 +45,7 @@ function GifCtrl($scope, $timeout) {
   $scope.dragEnd = function(e, ui) {
     var start = ui.item.data('start'),
         end = ui.item.index();
-    $scope.slides.splice(end, 0,
-    $scope.slides.splice(start, 1)[0]);
+    $scope.slides.splice(end, 0, $scope.slides.splice(start, 1)[0]);
   };
 
   sortableEle = $('#slides').sortable({

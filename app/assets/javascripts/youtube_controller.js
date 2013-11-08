@@ -19,6 +19,7 @@ function YoutubeCtrl($scope, $timeout) {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   };
 
+  // This is hacky.  I'm setting the player on window.
   $scope.youtube_toggle = function () {
     if (window.player.getPlayerState() === 1) {
       window.player.pauseVideo();

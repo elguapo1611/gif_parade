@@ -5,19 +5,19 @@
     <div class="img-container">
       <img src="{{slide.url}}" />
     </div>
-    <form id="editSlideForm{{$index}}" name="editSlideForm{{$index}}">
+    <form id="editSlideForm{{$index}}" name="editSlideForm{{$index}}" class="slide-form">
       <input ng-model="slide.text" class="text" type="text" size="30" placeholder="text">
       <input ng-model="slide.duration" class="duration" type="number" ng-min="1" size="30" placeholder="duration">
-      <input ng-model="slide.url" ng-change="test_me()" class="url" type="text" size="30" placeholder="url">
+      <input ng-model="slide.url" ng-change="test_me()" class="url text" type="text" size="30" placeholder="url">
     </form>
   </li>
 </ul>
 
-<form name="addSlideForm" ng-submit="add_slide(addSlideForm)">
-  <input type="text" ng-model="gif_text"  size="30" placeholder="text"/ >
-  <input value="1" ng-model="gif_duration" ng-min="1" type="number" size="30" placeholder="duration">
+<form name="addSlideForm" ng-submit="add_slide(addSlideForm)" class="slide-form">
+  <input type="text" ng-model="gif_text"  size="30" placeholder="text"/ class="text">
+  <input value="1" ng-model="gif_duration" ng-min="1" type="number" size="30" class="duration" placeholder="duration">
   <input type="text" ng-model="gif_url"  size="30" placeholder="url">
-  <input class="btn-primary" type="submit" value="add">
+  <input class="btn-primary" type="submit" value="add" class="text">
 </form>
 
 <hr>
